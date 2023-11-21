@@ -1,0 +1,31 @@
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import WelcomeScreen from "../screens/WelcomeScreen";
+import RecipeListScreen from "../screens/HomePage";
+import RecipeDetailsScreen from "../screens/Quizz";
+import CongratulationScreen from "../screens/congratulation"
+import SignUp from "../screens/SignUp";
+import Notification from "../screens/notifaction";
+
+
+const Stack = createNativeStackNavigator();
+const AppNavigator = () => {
+	return (
+		<NavigationContainer>
+			<Stack.Navigator screenOptions={{ headerShown: false }}>
+				<Stack.Screen name="Welcome" component={WelcomeScreen} />
+				<Stack.Screen name="RecipeList" component={RecipeListScreen} />
+				<Stack.Screen name="RecipeDetail" component={RecipeDetailsScreen} />
+				<Stack.Screen name="Congratulation" component={CongratulationScreen} />
+				<Stack.Screen name="SignUp" component={SignUp}/>
+				<Stack.Screen name="Notification" component={Notification}/>
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
+};
+
+export default AppNavigator;
+
+const styles = StyleSheet.create({});
